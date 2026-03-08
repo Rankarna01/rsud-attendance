@@ -1,44 +1,34 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Seeders;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
-class UserFactory extends Factory
+class UserSeeder extends Seeder
 {
-    /**
-     * The current password being used by the factory.
-     */
-    protected static ?string $password;
-
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    public function run(): void
     {
-        return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
-        ];
-    }
+        // Hapus data lama jika ada untuk menghindari duplicate entry saat testing
+        User::truncate();
 
-    /**
-     * Indicate that the model's email address should be unverified.
-     */
-    public function unverified(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
+        // 1. Data Admin
+        User::create([
+            'nama_lengkap' => 'Administrator SIAGA',
+            'nip'          => '123456',
+            'no_hp'        => '08123456789',
+            'password'     => Hash::make('admin123'),
+            'role'         => 'admin',
+        ]);
+
+        // 2. Data Pegawai
+        User::create([
+            'nama_lengkap' => 'Budi Setiawan',
+            'nip'          => '19900101',
+            'no_hp'        => '08571234567',
+            'password'     => Hash::make('pegawai123'),
+            'role'         => 'pegawai',
         ]);
     }
 }
