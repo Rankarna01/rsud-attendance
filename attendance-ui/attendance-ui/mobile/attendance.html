@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Attendance Camera - Mobile PWA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Plus Jakarta Sans', sans-serif;" class="bg-slate-900">
+    <div class="min-h-screen bg-slate-900 flex flex-col relative max-w-md mx-auto">
+        <!-- Top Bar -->
+        <div class="flex justify-between items-center p-6 text-white z-10 absolute top-0 w-full">
+            <a href="home.html" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 active:bg-white/20 transition-colors">
+                ✕
+            </a>
+            <span class="font-semibold tracking-wide">Live Camera</span>
+            <div class="w-10"></div>
+        </div>
+
+        <!-- Simulated Camera Viewfinder -->
+        <div class="flex-1 relative flex items-center justify-center overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop" alt="Camera view" class="absolute inset-0 w-full h-full object-cover opacity-40">
+            
+            <!-- Viewfinder brackets -->
+            <div class="w-48 h-64 border-2 border-white/30 rounded-3xl relative z-10 flex items-center justify-center">
+                <div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-amber-400 rounded-tl-3xl"></div>
+                <div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-amber-400 rounded-tr-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-amber-400 rounded-bl-3xl"></div>
+                <div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-amber-400 rounded-br-3xl"></div>
+                
+                <div class="text-white/50 text-xs font-medium uppercase tracking-widest">Face ID Scan</div>
+            </div>
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="bg-white rounded-t-[40px] px-6 py-8 pb-12 relative z-10 shadow-[0_-20px_40px_rgba(0,0,0,0.3)]">
+            
+            <!-- Location Status -->
+            <div class="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl mb-8 border border-slate-100">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-emerald-100 text-emerald-600">
+                    📍
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-semibold text-slate-900">Current Location</p>
+                    <p class="text-xs text-slate-500 truncate">-6.20000, 106.81666</p>
+                </div>
+                <div class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md">MATCH</div>
+            </div>
+
+            <!-- Capture Button -->
+            <div class="flex justify-center">
+                <a href="home.html" class="relative flex items-center justify-center w-20 h-20 bg-amber-500 rounded-full shadow-[0_0_0_8px_rgba(217,119,6,0.2)] active:scale-95 transition-all outline-none text-white text-3xl">
+                    📷
+                </a>
+            </div>
+            <p class="text-center text-sm font-medium text-slate-500 mt-6 uppercase tracking-wider">Tap to Check In</p>
+        </div>
+    </div>
+</body>
+</html>

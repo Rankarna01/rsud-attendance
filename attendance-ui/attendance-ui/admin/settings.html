@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Plus Jakarta Sans', sans-serif;" class="bg-slate-50">
+    <div class="min-h-screen flex">
+        <!-- SIDEBAR -->
+        <aside class="w-72 bg-white border-r border-slate-200 p-6 overflow-y-auto hidden lg:block">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-slate-900">Attendance</h1>
+            </div>
+            <nav class="space-y-2">
+                <a href="dashboard.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📊 Dashboard</a>
+                <a href="employees.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">👥 Data Pegawai</a>
+                <a href="leave-approvals.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📋 Persetujuan Izin/Cuti</a>
+                <a href="attendance-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📈 Laporan Absensi</a>
+                <a href="calendar-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📅 Laporan Kalender</a>
+                <a href="settings.html" class="block px-4 py-3 rounded-xl bg-primary/10 text-primary font-semibold">⚙️ Pengaturan</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-slate-900">Pengaturan</h1>
+                <p class="text-slate-600">Konfigurasi sistem attendance</p>
+            </div>
+
+            <div class="max-w-2xl space-y-6">
+                <!-- LOKASI KANTOR -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">📍 Lokasi Kantor</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Nama Kantor</label>
+                            <input type="text" value="Headquarters - Jakarta" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Latitude</label>
+                                <input type="text" value="-6.200000" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Longitude</label>
+                                <input type="text" value="106.816666" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Radius Kantor (meter)</label>
+                            <input type="number" value="50" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <button class="w-full px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition">📍 Ambil Lokasi Saat Ini</button>
+                    </div>
+                </div>
+
+                <!-- JAM KERJA -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">⏰ Pengaturan Jam Kerja</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Jam Mulai Kerja</label>
+                                <input type="time" value="08:00" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Jam Akhir Kerja</label>
+                                <input type="time" value="17:00" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Toleransi Keterlambatan (menit)</label>
+                            <input type="number" value="15" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <button class="w-full px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition">💾 Simpan Pengaturan</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

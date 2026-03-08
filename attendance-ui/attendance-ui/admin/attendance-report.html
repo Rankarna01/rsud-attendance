@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Absensi - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Plus Jakarta Sans', sans-serif;" class="bg-slate-50">
+    <div class="min-h-screen flex">
+        <!-- SIDEBAR -->
+        <aside class="w-72 bg-white border-r border-slate-200 p-6 overflow-y-auto hidden lg:block">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-slate-900">Attendance</h1>
+            </div>
+            <nav class="space-y-2">
+                <a href="dashboard.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📊 Dashboard</a>
+                <a href="employees.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">👥 Data Pegawai</a>
+                <a href="leave-approvals.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📋 Persetujuan Izin/Cuti</a>
+                <a href="attendance-report.html" class="block px-4 py-3 rounded-xl bg-primary/10 text-primary font-semibold">📈 Laporan Absensi</a>
+                <a href="calendar-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📅 Laporan Kalender</a>
+                <a href="settings.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">⚙️ Pengaturan</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-slate-900">Laporan Absensi</h1>
+                <p class="text-slate-600">Laporan kehadiran karyawan berdasarkan periode</p>
+            </div>
+
+            <!-- FILTERS -->
+            <div class="flex gap-4 mb-6 bg-white rounded-2xl p-4 border border-slate-100">
+                <button class="px-4 py-2 bg-primary text-white rounded-lg font-medium text-sm">Daily</button>
+                <button class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg font-medium text-sm hover:bg-slate-200">Weekly</button>
+                <button class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg font-medium text-sm hover:bg-slate-200">Monthly</button>
+                <button class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg font-medium text-sm hover:bg-slate-200">Yearly</button>
+            </div>
+
+            <!-- TABLE -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200 bg-slate-50">
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-700">Nama Karyawan</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-700">Tanggal</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-700">Jam Masuk</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-700">Jam Keluar</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-700">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-6 py-4 text-sm font-medium text-slate-900">John Doe</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">2024-01-08</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">08:45</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">17:15</td>
+                                <td class="px-6 py-4"><span class="px-3 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 rounded-full">Present</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-6 py-4 text-sm font-medium text-slate-900">Siti Nurhaliza</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">2024-01-08</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">08:30</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">17:00</td>
+                                <td class="px-6 py-4"><span class="px-3 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 rounded-full">Present</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-6 py-4 text-sm font-medium text-slate-900">Budi Santoso</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">2024-01-08</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">--:--</td>
+                                <td class="px-6 py-4 text-sm text-slate-700">--:--</td>
+                                <td class="px-6 py-4"><span class="px-3 py-1 text-xs font-semibold bg-amber-100 text-amber-700 rounded-full">Sick</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Plus Jakarta Sans', sans-serif;" class="bg-slate-50">
+    <div class="min-h-screen flex">
+        <!-- SIDEBAR -->
+        <aside class="w-72 bg-white border-r border-slate-200 p-6 overflow-y-auto hidden lg:block">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-slate-900">Attendance</h1>
+            </div>
+            <nav class="space-y-2">
+                <a href="dashboard.html" class="block px-4 py-3 rounded-xl bg-primary/10 text-primary font-semibold">📊 Dashboard</a>
+                <a href="employees.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">👥 Data Pegawai</a>
+                <a href="leave-approvals.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📋 Persetujuan Izin/Cuti</a>
+                <a href="attendance-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📈 Laporan Absensi</a>
+                <a href="calendar-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📅 Laporan Kalender</a>
+                <a href="settings.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">⚙️ Pengaturan</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-slate-900">Dashboard</h1>
+                <p class="text-slate-600">Overview kehadiran karyawan hari ini</p>
+            </div>
+
+            <!-- STAT CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-600 text-sm">Total Karyawan</p>
+                            <p class="text-4xl font-bold text-slate-900">45</p>
+                        </div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">👥</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-600 text-sm">Hadir Hari Ini</p>
+                            <p class="text-4xl font-bold text-emerald-600">38</p>
+                        </div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">✅</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-600 text-sm">Tidak Hadir</p>
+                            <p class="text-4xl font-bold text-red-600">3</p>
+                        </div>
+                        <div class="w-14 h-14 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-2xl">❌</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-600 text-sm">Sakit/Izin</p>
+                            <p class="text-4xl font-bold text-amber-600">4</p>
+                        </div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">🏥</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHART -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 mb-8">
+                <h3 class="font-bold text-slate-900 mb-4">Persentase Kehadiran</h3>
+                <div class="flex items-end gap-4 h-64">
+                    <div class="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-2xl flex items-end justify-center pb-4 text-white font-bold">84%</div>
+                    <div class="flex-1 bg-gradient-to-t from-red-500 to-red-400 rounded-2xl flex items-end justify-center pb-4 text-white font-bold">7%</div>
+                    <div class="flex-1 bg-gradient-to-t from-amber-500 to-amber-400 rounded-2xl flex items-end justify-center pb-4 text-white font-bold">9%</div>
+                </div>
+                <div class="flex justify-center gap-6 mt-4 text-sm font-medium">
+                    <div><span class="inline-block w-4 h-4 bg-blue-500 rounded-md mr-2"></span>Hadir</div>
+                    <div><span class="inline-block w-4 h-4 bg-red-500 rounded-md mr-2"></span>Tidak Hadir</div>
+                    <div><span class="inline-block w-4 h-4 bg-amber-500 rounded-md mr-2"></span>Sakit/Izin</div>
+                </div>
+            </div>
+
+            <!-- RECENT ACTIVITY -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">Aktivitas Terbaru</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">✓</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-slate-900 text-sm">John Doe checked in</p>
+                            <p class="text-xs text-slate-500">08:02 AM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center">📄</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-slate-900 text-sm">Siti submitted leave request</p>
+                            <p class="text-xs text-slate-500">07:45 AM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">✓</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-slate-900 text-sm">Budi Santoso checked in</p>
+                            <p class="text-xs text-slate-500">08:15 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

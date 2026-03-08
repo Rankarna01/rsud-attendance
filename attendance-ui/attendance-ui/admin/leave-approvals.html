@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persetujuan Izin/Cuti - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Plus Jakarta Sans', sans-serif;" class="bg-slate-50">
+    <div class="min-h-screen flex">
+        <!-- SIDEBAR -->
+        <aside class="w-72 bg-white border-r border-slate-200 p-6 overflow-y-auto hidden lg:block">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-slate-900">Attendance</h1>
+            </div>
+            <nav class="space-y-2">
+                <a href="dashboard.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📊 Dashboard</a>
+                <a href="employees.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">👥 Data Pegawai</a>
+                <a href="leave-approvals.html" class="block px-4 py-3 rounded-xl bg-primary/10 text-primary font-semibold">📋 Persetujuan Izin/Cuti</a>
+                <a href="attendance-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📈 Laporan Absensi</a>
+                <a href="calendar-report.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">📅 Laporan Kalender</a>
+                <a href="settings.html" class="block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-100">⚙️ Pengaturan</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-slate-900">Persetujuan Izin/Cuti</h1>
+                <p class="text-slate-600">Review dan setujui permohonan izin/cuti karyawan</p>
+            </div>
+
+            <!-- LEAVE REQUESTS -->
+            <div class="space-y-4">
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-bold text-slate-900">John Doe - Sick Leave</h3>
+                            <p class="text-sm text-slate-600 mt-1">Tanggal: 2024-01-10 hingga 2024-01-12</p>
+                            <p class="text-sm text-slate-600">Alasan: Demam tinggi dan pilek</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-amber-100 text-amber-700 rounded-full">Menunggu</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="px-4 py-2 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition text-sm">✓ Setujui</button>
+                        <button class="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition text-sm">✕ Tolak</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-bold text-slate-900">Siti Nurhaliza - Annual Leave</h3>
+                            <p class="text-sm text-slate-600 mt-1">Tanggal: 2024-01-15 hingga 2024-01-19</p>
+                            <p class="text-sm text-slate-600">Alasan: Liburan keluarga</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-amber-100 text-amber-700 rounded-full">Menunggu</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="px-4 py-2 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition text-sm">✓ Setujui</button>
+                        <button class="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition text-sm">✕ Tolak</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-bold text-slate-900">Budi Santoso - Sick Leave</h3>
+                            <p class="text-sm text-slate-600 mt-1">Tanggal: 2024-01-08 hingga 2024-01-08</p>
+                            <p class="text-sm text-slate-600">Alasan: Sakit perut</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 rounded-full">Disetujui</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
