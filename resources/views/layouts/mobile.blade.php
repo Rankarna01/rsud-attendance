@@ -76,24 +76,19 @@
 
 <body class="bg-surface text-secondary pb-24">
 
-    <nav
-        class="sticky top-0 z-40 glass-effect border-b border-gray-100 px-5 py-4 flex justify-between items-center shadow-[0_5px_15px_rgba(0,0,0,0.02)]">
+    <nav class="sticky top-0 z-40 glass-effect border-b border-gray-100 px-5 py-4 flex justify-between items-center shadow-[0_5px_15px_rgba(0,0,0,0.02)]">
         <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gray-300/50">
-                <span class="text-primary font-black text-xl">S</span>
+            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100 p-1.5">
+                <img src="{{ asset('logo.png') }}" alt="Logo RSUD" class="w-full h-full object-contain">
             </div>
             <div>
-                <h1 class="text-sm font-black uppercase tracking-tighter">SIAGA <span class="text-primary">Mobile</span>
-                </h1>
-                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none mt-0.5">Employee
-                    Portal</p>
+                <h1 class="text-sm font-black uppercase tracking-tighter">SIAGA <span class="text-primary">Mobile</span></h1>
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none mt-0.5">RSUD GUSTI ABDUL GANI</p>
             </div>
         </div>
-        <button
-            class="relative w-10 h-10 bg-white rounded-xl text-secondary shadow-sm border border-gray-100 flex items-center justify-center hover:bg-gray-50 transition-colors">
+        <button class="relative w-10 h-10 bg-white rounded-xl text-secondary shadow-sm border border-gray-100 flex items-center justify-center hover:bg-gray-50 transition-colors">
             <i class="fa-solid fa-bell text-lg"></i>
-            <span
-                class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
+            <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
         </button>
     </nav>
 
