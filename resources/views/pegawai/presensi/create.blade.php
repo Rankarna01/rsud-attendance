@@ -3,9 +3,9 @@
 @section('content')
 <div class="space-y-6 animate-fadeIn min-h-[70vh] flex flex-col justify-center">
     
-    <div class="text-center space-y-2 mb-4">
-        <h2 class="text-2xl font-black text-secondary uppercase tracking-tighter">Face <span class="text-primary">Recognition</span></h2>
-        <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Arahkan wajah ke dalam area</p>
+   <div class="text-center space-y-2 mb-4">
+        <h2 class="text-2xl font-black text-secondary uppercase tracking-tighter">Live <span class="text-primary">Capture</span></h2>
+        <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Arahkan wajah ke dalam area kamera</p>
     </div>
 
     <div class="relative w-72 h-72 mx-auto flex items-center justify-center">

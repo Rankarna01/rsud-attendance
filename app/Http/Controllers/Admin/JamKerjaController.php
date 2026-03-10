@@ -36,6 +36,8 @@ class JamKerjaController extends Controller
                 'jam_masuk' => $request->jam_masuk,
                 'jam_pulang' => $request->jam_pulang,
                 'toleransi' => $request->toleransi,
+                'lat_long' => '-6.200000,106.816666', // Koordinat dummy (bisa diubah nanti di menu Lokasi)
+                'radius' => 50, // Nilai default radius (jika ada kolomnya di DB)
             ]);
         }
 

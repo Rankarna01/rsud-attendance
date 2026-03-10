@@ -9,6 +9,8 @@ class Pengaturan extends Model
     protected $fillable = [
         'jam_masuk', 
         'jam_pulang', 
-        'toleransi'
+        'toleransi',
+        'lat_long', // <--- Pastikan ini ditambahkan
+        'radius'
     ];
 }
