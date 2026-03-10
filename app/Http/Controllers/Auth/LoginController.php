@@ -14,34 +14,31 @@ class LoginController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $request->validate([
-            'login_identity' => 'required|string',
-            'password' => 'required',
-        ]);
+{
+    $credentials = $request->validate([
+        'login_identity' => 'required',
+        'password' => 'required',
+    ]);
 
-        // Cek apakah input adalah NIP atau No HP (Logika sederhana: jika numerik dan panjang tertentu)
-        $loginField = filter_var($request->login_identity, FILTER_VALIDATE_INT) ? 'nip' : 'no_hp';
-        
-        // Kita juga bisa cek keduanya sekaligus
-        $credentials1 = ['nip' => $request->login_identity, 'password' => $request->password];
-        $credentials2 = ['no_hp' => $request->login_identity, 'password' => $request->password];
+    // Coba login via NIP
+    $authNip = Auth::attempt(['nip' => $request->login_identity, 'password' => $request->password]);
+    // Coba login via No HP
+    $authHp = Auth::attempt(['no_hp' => $request->login_identity, 'password' => $request->password]);
 
-        if (Auth::attempt($credentials1) || Auth::attempt($credentials2)) {
-            $request->session()->regenerate();
+    if ($authNip || $authHp) {
+        $request->session()->regenerate();
 
-            // Redirect berdasarkan role
-            if (Auth::user()->role === 'admin') {
-                return redirect()->intended('/admin/dashboard');
-            }
-            
-            return redirect()->intended('/pegawai/home');
+        // Cek Role dan Redirect
+        if (Auth::user()->role === 'admin') {
+            return redirect()->route('admin.dashboard'); // Pakai nama route
         }
-
-        return back()->withErrors([
-            'login_identity' => 'Kredensial yang diberikan tidak cocok dengan data kami.',
-        ])->onlyInput('login_identity');
+        return redirect()->route('pegawai.home');
     }
+
+    return back()->withErrors([
+        'login_identity' => 'NIP/No HP atau Password salah.',
+    ])->onlyInput('login_identity');
+}
 
     public function logout(Request $request)
     {
