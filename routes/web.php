@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\DashboardController; // Pastikan ini ada!
+use App\Http\Controllers\Admin\DashboardController; 
 use App\Http\Controllers\Admin\PegawaiController;
 use App\Http\Controllers\Admin\PersetujuanController;
 use App\Http\Controllers\Admin\LokasiController;
@@ -15,7 +15,6 @@ use App\Http\Controllers\Pegawai\RiwayatController;
 use App\Http\Controllers\Pegawai\IzinController;
 use App\Http\Controllers\Pegawai\ProfilController;
 
-// Redirect Home ke Login
 Route::get('/', function () {
     return redirect()->route('login');
 });
