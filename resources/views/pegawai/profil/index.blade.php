@@ -8,13 +8,21 @@
         <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
         
         <div class="relative z-10 flex flex-col items-center text-center">
-            <div class="relative mb-4">
-                <img src="https://ui-avatars.com/api/?name={{ urlencode($user->nama_lengkap) }}&background=F4C430&color=1F2937&bold=true&size=128" 
-                     class="w-24 h-24 rounded-[2rem] border-4 border-white/10 shadow-xl" alt="Avatar">
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-secondary flex items-center justify-center">
-                    <i class="fa-solid fa-check text-white text-[10px]"></i>
+            
+            <div class="relative mb-4 cursor-pointer group" onclick="document.getElementById('inputFoto').click()">
+                @if($user->foto)
+                    <img id="previewFoto" src="{{ asset('storage/' . $user->foto) }}" 
+                         class="w-24 h-24 rounded-[2rem] border-4 border-white/10 shadow-xl object-cover transition-transform group-hover:scale-105" alt="Avatar">
+                @else
+                    <img id="previewFoto" src="https://ui-avatars.com/api/?name={{ urlencode($user->nama_lengkap) }}&background=F4C430&color=1F2937&bold=true&size=128" 
+                         class="w-24 h-24 rounded-[2rem] border-4 border-white/10 shadow-xl object-cover transition-transform group-hover:scale-105" alt="Avatar Default">
+                @endif
+                
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full border-4 border-secondary flex items-center justify-center shadow-lg group-hover:bg-white group-hover:text-primary transition-colors">
+                    <i class="fa-solid fa-camera text-secondary text-[10px] group-hover:text-primary"></i>
                 </div>
             </div>
+            <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest mt-1 mb-2 italic">Ketuk foto untuk mengubah</p>
             
             <h2 class="text-2xl font-black text-white tracking-tighter">{{ $user->nama_lengkap }}</h2>
             <p class="text-primary text-xs font-bold uppercase tracking-widest mt-1 mb-3">{{ $user->nip }}</p>
@@ -36,9 +44,11 @@
             </div>
         </div>
 
-        <form action="{{ route('pegawai.profil.update') }}" method="POST" class="space-y-5">
+        <form action="{{ route('pegawai.profil.update') }}" method="POST" enctype="multipart/form-data" class="space-y-5">
             @csrf
             @method('PUT')
+
+            <input type="file" name="foto" id="inputFoto" class="hidden" accept="image/jpeg, image/png, image/jpg" onchange="previewImage(this)">
 
             <div>
                 <label class="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-2 ml-1">No. WhatsApp Aktif</label>
@@ -63,7 +73,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="w-full bg-primary text-secondary font-black text-xs py-4 rounded-2xl shadow-xl shadow-primary/20 hover:bg-black hover:text-primary transition-all uppercase tracking-[0.2em] mt-2">
+            <button type="submit" id="btnSaveProfile" class="w-full bg-primary text-secondary font-black text-xs py-4 rounded-2xl shadow-xl shadow-primary/20 hover:bg-black hover:text-primary transition-all uppercase tracking-[0.2em] mt-2 flex justify-center items-center">
                 Simpan Perubahan
             </button>
         </form>
@@ -83,6 +93,19 @@
 
 @push('scripts')
 <script>
+    // Fitur Live Preview Foto Profil
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                // Ganti src gambar dengan gambar yang baru dipilih
+                document.getElementById('previewFoto').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Modal Konfirmasi Logout
     function confirmLogout() {
         Swal.fire({
             title: 'KELUAR SISTEM?',
@@ -104,6 +127,13 @@
             }
         });
     }
+
+    // Loading State saat Simpan Form
+    document.querySelector('form[action="{{ route('pegawai.profil.update') }}"]').addEventListener('submit', function() {
+        const btn = document.getElementById('btnSaveProfile');
+        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> MENYIMPAN...`;
+        btn.classList.add('opacity-75', 'cursor-not-allowed');
+    });
 </script>
 @endpush
 @endsection
