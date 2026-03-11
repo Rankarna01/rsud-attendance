@@ -12,7 +12,23 @@
                 <img src="https://ui-avatars.com/api/?name={{ urlencode($user->nama_lengkap) }}&background=F4C430&color=1F2937&bold=true" 
                      class="w-14 h-14 rounded-[1.2rem] border-2 border-primary shadow-lg" alt="Avatar">
                 <div>
-                    <p class="text-gray-400 text-[10px] font-black uppercase tracking-[0.2em] mb-0.5">Welcome Back,</p>
+                    @php
+                        // Ambil jam saat ini dengan format 24 jam (00-23)
+                        $jam = \Carbon\Carbon::now()->format('H');
+                        
+                        // Logika sapaan waktu
+                        if ($jam >= 4 && $jam < 11) {
+                            $sapaan = 'Selamat Pagi,';
+                        } elseif ($jam >= 11 && $jam < 15) {
+                            $sapaan = 'Selamat Siang,';
+                        } elseif ($jam >= 15 && $jam < 18) {
+                            $sapaan = 'Selamat Sore,';
+                        } else {
+                            $sapaan = 'Selamat Malam,';
+                        }
+                    @endphp
+                    
+                    <p class="text-primary/90 text-[10px] font-black uppercase tracking-[0.2em] mb-0.5">{{ $sapaan }}</p>
                     <h2 class="text-white text-xl font-black tracking-tight leading-none">{{ explode(' ', $user->nama_lengkap)[0] }}</h2>
                     <div class="mt-1.5 inline-flex items-center px-2.5 py-0.5 bg-primary/20 border border-primary/30 rounded-md text-[9px] text-primary font-black uppercase tracking-widest">
                         NIP: {{ $user->nip }}
