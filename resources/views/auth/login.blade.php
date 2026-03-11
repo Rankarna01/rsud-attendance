@@ -43,7 +43,7 @@
                 </div>
                 <div>
                     <h1 class="text-4xl font-black tracking-widest drop-shadow-md">SIAGA</h1>
-                    <p class="text-sm font-medium opacity-90 drop-shadow-md tracking-wider">Aplikasi Absensi RSUD</p>
+                    <p class="text-sm font-medium opacity-90 drop-shadow-md tracking-wider">RSUD Gusti Abdul Gani</p>
                 </div>
             </div>
             
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="mt-auto pt-16 text-center lg:hidden">
-                    <p class="text-gray-400 text-xs font-medium tracking-wide">Absensi Online Berbasis GPS</p>
+                    <p class="text-gray-400 text-xs font-medium tracking-wide"> Absensi RSUD Gusti Abdul Gani</p>
                 </div>
             </form>
         </div>

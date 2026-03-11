@@ -19,7 +19,7 @@
                     colors: {
                         'primary': '#F4C430',    /* Golden Yellow */
                         'secondary': '#1F2937',  /* Dark Slate */
-                        'surface': '#F9FAFB',    /* Light Background */
+                        'surface': '#F9FAFBz',    /* Light Background */
                         'accent': '#B8860B',     /* Dark Goldenrod for hover */
                         'success': '#10B981',
                         'danger': '#EF4444'

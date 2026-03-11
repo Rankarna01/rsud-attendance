@@ -15,7 +15,7 @@
                     colors: {
                         primary: '#F4C430',
                         secondary: '#1F2937',
-                        surface: '#F9FAFB'
+                        surface: '#F9FAFBz'
                     }
                 }
             }
